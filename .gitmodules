@@ -4,3 +4,6 @@
 [submodule "build/stopwords-filter"]
 	path = build/stopwords-filter
 	url = git://github.com/brenes/stopwords-filter.git
+[submodule "hunspell-asm"]
+	path = hunspell-asm
+	url = https://github.com/kebal2/hunspell-asm.git
