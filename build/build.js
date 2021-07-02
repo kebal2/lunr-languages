@@ -75,12 +75,12 @@ var list = [
     file: 'GermanStemmer.js',
     stopwords: stopwordsRepoFolder + 'de.csv',
     wordCharacters: wordCharacters('Latin')
-}, {
+}/*, {
     locale: 'hu',
     file: 'HungarianStemmer.js',
     stopwords: stopwordsRepoFolder + 'hu.csv',
     wordCharacters: wordCharacters('Latin')
-}, {
+}*/, {
     locale: 'it',
     file: 'ItalianStemmer.js',
     stopwords: stopwordsRepoFolder + 'it.csv',
