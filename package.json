@@ -6,8 +6,11 @@
   "license": "MPL-1.1",
   "engine": "node 0.10.1",
   "scripts": {
-    "build": "node build/build.js",
-    "test": "mocha test/*Test.js"
+    "build": "npm run buildDependencies && npm run buildSnowball",
+    "buildSnowball": "node build/build.js",
+    "buildDependencies": "cd hunspell-asm && npm install && npm run prepublishOnly",
+    "test": "mocha test/*Test.js",
+    "all": "npm run build && npm run test"
   },
   "repository": {
     "type": "git",
