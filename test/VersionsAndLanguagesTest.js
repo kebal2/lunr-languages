@@ -98,7 +98,7 @@ lunrVersions.forEach(function(lunrVersion) {
             });
         });
         Object.keys(testDocuments).forEach(function(language) {
-            describe("should be able to correctly find terms in " + language.toUpperCase() + " correctly", function() {
+            describe("should be able to correctly find terms in " + language.toUpperCase() + " correctly", async function() {
                 // because these tests are asynchronous, we must ensure every load of lunr is fresh
                 // so we do not get the previous used languages on it.
                 // if we don't do this, when we'll run the test for jp, we'll also have da, de, fr, it languages used
@@ -112,7 +112,7 @@ lunrVersions.forEach(function(lunrVersion) {
                 if (language === 'th' || language === 'hi') {    // for thai, we must also load the wordcut tokenizer
                     lunr.wordcut = require('../wordcut');
                 }
-                require('../lunr.' + language + '.js')(lunr);
+                (await require('../lunr.' + language + '.js'))(lunr);
 
                 var idx = lunr(function () {
                     this.use(lunr[language]);
